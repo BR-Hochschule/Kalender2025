@@ -1,4 +1,3 @@
-# .github/workflows/deploy-pages.yml
 name: Deploy static content to Pages
 
 on:
@@ -27,11 +26,12 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true   # 👈 wichtig
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository (inkl. index.html usw.)
           path: '.'
 
       - name: Deploy to GitHub Pages
