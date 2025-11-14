@@ -46,13 +46,26 @@
       h1 {
         text-align: center;
         margin-top: 0;
-        font-size: clamp(2.4rem, 6vw, 4.2rem);
         font-family: "Playfair Display", "Segoe Script", Georgia, serif;
-        letter-spacing: 0.24rem;
+        letter-spacing: 0.18rem;
         text-transform: uppercase;
-        color: transparent;
-        -webkit-background-clip: text;
-        background-clip: text;
+        position: relative;
+        padding-bottom: 1rem;
+        color: #fff;
+      }
+
+      h1 span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 1.8rem;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(5px);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+        font-size: clamp(2.4rem, 6vw, 4rem);
+        line-height: 1.2;
         background-image: linear-gradient(
           120deg,
           #fff9e5 0%,
@@ -61,25 +74,16 @@
           #f04e55 75%,
           #a00232 100%
         );
-        filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.55));
-        position: relative;
-        padding-bottom: 0.75rem;
-      }
-
-      h1 span {
-        display: inline-block;
-        padding: 0.25rem 1.5rem;
-        border: 2px solid rgba(255, 255, 255, 0.35);
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(3px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
       }
 
       h1::before,
       h1::after {
         content: "✺ ✵ ✺";
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         letter-spacing: 0.5rem;
         color: rgba(255, 255, 255, 0.85);
         position: absolute;
@@ -88,33 +92,11 @@
       }
 
       h1::before {
-        left: 10%;
+        left: 8%;
       }
 
       h1::after {
-        right: 10%;
-      }
-
-      .controls {
-        text-align: center;
-        margin-top: 1rem;
-      }
-
-      .controls button {
-        background: rgba(255, 255, 255, 0.2);
-        border: 1px solid rgba(255, 255, 255, 0.5);
-        border-radius: 999px;
-        padding: 0.6rem 1.6rem;
-        color: #7a1f1f;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.2s ease, transform 0.2s ease;
-        backdrop-filter: blur(3px);
-      }
-
-      .controls button:hover {
-        background: rgba(255, 255, 255, 0.4);
-        transform: translateY(-2px);
+        right: 8%;
       }
 
       .doors {
@@ -136,8 +118,8 @@
         color: #fff;
         font-size: 1.5rem;
         font-weight: bold;
-        width: 120px;
-        height: 120px;
+        width: clamp(80px, 11vw, 120px);
+        height: clamp(80px, 11vw, 120px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -167,20 +149,10 @@
         z-index: 0;
       }
 
-      .door.has-image::before {
-        opacity: 0.18;
-      }
-
       .door.open.has-image::before {
         opacity: 0.9;
       }
 
-      @media (max-width: 600px) {
-        .door {
-          width: 90px;
-          height: 90px;
-        }
-      }
 
       .door:focus-visible {
         outline: 2px solid #fff;
@@ -576,11 +548,6 @@
     </div>
     <div class="calendar">
       <h1><span>Betriebsratskalender 2025</span></h1>
-      <div class="controls">
-        <button id="openAll" type="button">
-          Alle T&#252;rchen &#246;ffnen
-        </button>
-      </div>
       <div class="doors" id="doors"></div>
     </div>
     <script>
@@ -862,7 +829,6 @@
 
       const STORAGE_KEY = "brkalendar-open-doors";
       const doorsContainer = document.getElementById("doors");
-      const openAllButton = document.getElementById("openAll");
       const overlay = document.getElementById("surpriseOverlay");
       const overlayCard = document.getElementById("surpriseCard");
       const doorElements = [];
@@ -1215,11 +1181,6 @@
         }
       });
 
-      openAllButton.addEventListener("click", () => {
-        hideOverlay(false);
-        doorElements.forEach((door) => setDoorState(door, true));
-        triggerSnowBurst();
-      });
     </script>
   </body>
 </html>
