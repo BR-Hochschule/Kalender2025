@@ -187,7 +187,7 @@
 
       .door > * {
         position: relative;
-        z-index: 1;
+        z-index: 3;
       }
 
       .door-number {
@@ -248,11 +248,79 @@
         -webkit-box-orient: vertical;
         display: flex;
         flex-direction: column;
+        z-index: 1;
       }
 
       .door.open .door-content {
         opacity: 1;
         transform: translateY(0) scale(1);
+      }
+
+      .door-curtain {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        pointer-events: none;
+        z-index: 2;
+        overflow: hidden;
+        filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.4));
+      }
+
+      .door-curtain-panel {
+        flex: 1;
+        background: linear-gradient(
+            90deg,
+            rgba(117, 7, 36, 0.98),
+            rgba(190, 21, 58, 0.94)
+          ),
+          repeating-linear-gradient(
+            0deg,
+            rgba(255, 231, 197, 0.25) 0,
+            rgba(255, 231, 197, 0.25) 3px,
+            transparent 3px,
+            transparent 7px
+          );
+        margin: 0 1px;
+        box-shadow: inset 0 -35px 55px rgba(0, 0, 0, 0.55),
+          inset 0 20px 25px rgba(255, 175, 175, 0.25);
+        transform-origin: top center;
+        transition: transform 0.65s ease, opacity 0.55s ease;
+        position: relative;
+      }
+
+      .door-curtain-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.25) 5px,
+          transparent 5px,
+          transparent 12px
+        );
+        mix-blend-mode: screen;
+        opacity: 0.4;
+      }
+
+      .door-curtain-panel.left {
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+      }
+
+      .door-curtain-panel.right {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+
+      .door.open .door-curtain-panel.left {
+        transform: perspective(750px) rotateY(30deg) translateX(-105%);
+      }
+
+      .door.open .door-curtain-panel.right {
+        transform: perspective(750px) rotateY(-30deg) translateX(105%);
       }
 
       .surprise-overlay {
@@ -1137,6 +1205,13 @@
           door.style.setProperty("--door-photo", `url("${surprise.image}")`);
         }
         door.appendChild(preview);
+        const curtain = document.createElement("div");
+        curtain.className = "door-curtain";
+        curtain.innerHTML = `
+          <span class="door-curtain-panel left"></span>
+          <span class="door-curtain-panel right"></span>
+        `;
+        door.appendChild(curtain);
 
         door.addEventListener("click", () => toggleDoor(door, surprise, label));
 
