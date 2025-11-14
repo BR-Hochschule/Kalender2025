@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Betriebsratskalender 2025</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("background.jpg") center/cover no-repeat fixed;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        padding: clamp(0.5rem, 2vw, 1.5rem);
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.25);
+        z-index: 0;
+      }
+
+      .calendar {
+        width: 100%;
+        min-height: 100vh;
+        background: rgba(255, 255, 255, 0);
+        border-radius: 16px;
+        padding: clamp(1.5rem, 4vw, 3rem);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0);
+        backdrop-filter: blur(6px);
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 0;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-family: "Playfair Display", "Segoe Script", Georgia, serif;
+        letter-spacing: 0.24rem;
+        text-transform: uppercase;
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+        background-image: linear-gradient(
+          120deg,
+          #fff9e5 0%,
+          #ffd89c 20%,
+          #ff9b6a 45%,
+          #f04e55 75%,
+          #a00232 100%
+        );
+        filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.55));
+        position: relative;
+        padding-bottom: 0.75rem;
+      }
+
+      h1 span {
+        display: inline-block;
+        padding: 0.25rem 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(3px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+      }
+
+      h1::before,
+      h1::after {
+        content: "✺ ✵ ✺";
+        font-size: 0.9rem;
+        letter-spacing: 0.5rem;
+        color: rgba(255, 255, 255, 0.85);
+        position: absolute;
+        bottom: 0.15rem;
+        transform: translateY(100%);
+      }
+
+      h1::before {
+        left: 10%;
+      }
+
+      h1::after {
+        right: 10%;
+      }
+
+      .controls {
+        text-align: center;
+        margin-top: 1rem;
+      }
+
+      .controls button {
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 999px;
+        padding: 0.6rem 1.6rem;
+        color: #7a1f1f;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+        backdrop-filter: blur(3px);
+      }
+
+      .controls button:hover {
+        background: rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+      }
+
+      .doors {
+        flex: 1;
+        position: relative;
+        margin-top: 2.5rem;
+        min-height: 420px;
+        border-radius: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        contain: layout paint;
+      }
+
+      .door {
+        background: rgba(5, 5, 5, 0.45);
+        border: 1px solid rgba(255, 255, 255, 0.55);
+        border-radius: 12px;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 120px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          background 0.25s ease, color 0.25s ease;
+        position: absolute;
+        backdrop-filter: blur(5px);
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .door::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-image: var(--door-photo, none);
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 0;
+      }
+
+      .door.has-image::before {
+        opacity: 0.18;
+      }
+
+      .door.open.has-image::before {
+        opacity: 0.9;
+      }
+
+      @media (max-width: 600px) {
+        .door {
+          width: 90px;
+          height: 90px;
+        }
+      }
+
+      .door:focus-visible {
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+
+      .door::after {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 9px;
+        border: 1px dashed rgba(255, 255, 255, 0.4);
+        pointer-events: none;
+      }
+
+      .door:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .door.open {
+        transform: rotateY(-8deg) scale(1.02);
+        background: rgba(255, 255, 255, 0.35);
+        color: #7a1f1f;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+        border-color: rgba(173, 20, 87, 0.9);
+      }
+
+      .door.open::after {
+        border-color: rgba(173, 20, 87, 0.6);
+      }
+
+      .door > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .door-number {
+        font-size: 1.8rem;
+        text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .door-gift {
+        position: absolute;
+        bottom: 10px;
+        font-size: 1rem;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+      }
+
+      .door.open .door-gift {
+        opacity: 0.4;
+        transform: translateY(0);
+      }
+
+      .door.open .door-number {
+        opacity: 0.2;
+        transform: translateY(-10px);
+      }
+
+      .door-content {
+        position: absolute;
+        inset: 12px;
+        border-radius: 10px;
+        padding: 0.6rem;
+        background-image: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.92)
+          ),
+          var(--door-content-image, none);
+        color: #7a1f1f;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(8px) scale(0.9);
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+        line-height: 1.2;
+        pointer-events: none;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        word-break: break-word;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .door.open .door-content {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      .surprise-overlay {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 15;
+        cursor: pointer;
+        --overlay-start-x: 50%;
+        --overlay-start-y: 50%;
+        --overlay-translate-x: 0;
+        --overlay-translate-y: 0;
+      }
+
+      .surprise-overlay.is-visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .surprise-overlay.is-closing {
+        pointer-events: none;
+      }
+
+      .surprise-card {
+        max-width: min(520px, 90vw);
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 18px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        color: #7a1f1f;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+        border: 3px solid rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+        position: relative;
+        transform-origin: var(--overlay-start-x) var(--overlay-start-y);
+        transform: translate(
+            var(--overlay-translate-x),
+            var(--overlay-translate-y)
+          )
+          scale(0.25);
+        opacity: 0;
+        transition: transform 0.25s ease, opacity 0.2s ease;
+      }
+
+      .surprise-overlay.is-visible .surprise-card {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+
+      .surprise-overlay.is-closing .surprise-card {
+        transform: translate(
+            var(--overlay-translate-x),
+            var(--overlay-translate-y)
+          )
+          scale(0.2);
+        opacity: 0;
+      }
+
+      .surprise-card::after {
+        content: "Tippe, um zu schliessen";
+        position: absolute;
+        bottom: 12px;
+        right: 16px;
+        font-size: 0.75rem;
+        letter-spacing: 0.08rem;
+        color: rgba(122, 31, 31, 0.6);
+      }
+
+      .surprise-card strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+        font-size: 0.85rem;
+        color: #ad1457;
+      }
+
+      .surprise-card p {
+        margin: 0;
+      }
+
+      .surprise-card a {
+        color: #ad1457;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+
+      .surprise-card__media {
+        width: 100%;
+        height: 180px;
+        border-radius: 14px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 1rem;
+        box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.35);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .surprise-card__media::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 10%,
+          rgba(0, 0, 0, 0.4) 100%
+        );
+      }
+
+      .snow {
+        pointer-events: none;
+      }
+
+      .snow--layer {
+        position: fixed;
+        top: -120vh;
+        left: 0;
+        width: 100%;
+        height: 240vh;
+        z-index: 8;
+        mix-blend-mode: screen;
+        opacity: var(--layer-opacity, 0.45);
+        animation-name: snowfall;
+        animation-duration: var(--fall-duration, 24s);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
+        transform: translate3d(0, 0, 0);
+        --flake-size: 220px 220px;
+        --flake-image: radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 255, 255, 0.8) 1.5px,
+            transparent 1.5px
+          ),
+          radial-gradient(
+            circle at 50% 0,
+            rgba(255, 255, 255, 0.65) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 70% 80%,
+            rgba(255, 255, 255, 0.75) 1.2px,
+            transparent 1.2px
+          );
+        background-image: var(--flake-image);
+        background-size: var(--flake-size);
+        background-repeat: repeat;
+      }
+
+      .snow--layer::before,
+      .snow--layer::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--flake-image);
+        background-size: var(--flake-size);
+        background-repeat: repeat;
+        opacity: 0.6;
+        animation-name: snow-shift;
+        animation-duration: var(--shift-duration, 12s);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        mix-blend-mode: inherit;
+      }
+
+      .snow--layer::after {
+        opacity: 0.45;
+        filter: blur(1px);
+        animation-duration: calc(var(--shift-duration, 12s) * 1.35);
+        animation-delay: calc(var(--shift-duration, 12s) / -2);
+      }
+
+      .snow--tiny {
+        --fall-duration: 28s;
+        --shift-duration: 16s;
+        --layer-opacity: 0.35;
+        --flake-size: 180px 180px;
+        --drift: 3vw;
+        filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.35));
+      }
+
+      .snow--mid {
+        --fall-duration: 20s;
+        --shift-duration: 12s;
+        --layer-opacity: 0.45;
+        --flake-size: 220px 220px;
+        --flake-image: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 255, 255, 0.9) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle at 70% 10%,
+            rgba(255, 255, 255, 0.7) 3px,
+            transparent 3px
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(255, 255, 255, 0.8) 2.5px,
+            transparent 2.5px
+          );
+        --drift: -4vw;
+      }
+
+      .snow--large {
+        --fall-duration: 14s;
+        --shift-duration: 9s;
+        --layer-opacity: 0.55;
+        --flake-size: 260px 260px;
+        --flake-image: radial-gradient(
+            circle at 30% 0%,
+            rgba(255, 255, 255, 0.95) 4px,
+            transparent 4px
+          ),
+          radial-gradient(
+            circle at 60% 50%,
+            rgba(255, 255, 255, 0.85) 3px,
+            transparent 3px
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 255, 255, 0.8) 5px,
+            transparent 5px
+          );
+        --drift: 6vw;
+        filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.65));
+      }
+
+      body.snow-burst .snow--layer {
+        opacity: 0.95;
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.85));
+      }
+
+      body.snow-burst .snow--tiny {
+        animation-duration: 12s;
+      }
+
+      body.snow-burst .snow--mid {
+        animation-duration: 10s;
+      }
+
+      body.snow-burst .snow--large {
+        animation-duration: 8s;
+      }
+
+      @keyframes snowfall {
+        0% {
+          transform: translate3d(0, -110vh, 0);
+        }
+        100% {
+          transform: translate3d(var(--drift, 5vw), 110vh, 0);
+        }
+      }
+
+      @keyframes snow-shift {
+        0% {
+          background-position: 0 0, 0 0, 0 0;
+        }
+        100% {
+          background-position: 80px 220px, -100px 280px, 110px 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="snow snow--layer snow--tiny" aria-hidden="true"></div>
+    <div class="snow snow--layer snow--mid" aria-hidden="true"></div>
+    <div class="snow snow--layer snow--large" aria-hidden="true"></div>
+    <div
+      class="surprise-overlay"
+      id="surpriseOverlay"
+      aria-hidden="true"
+      role="presentation"
+    >
+      <div
+        class="surprise-card"
+        id="surpriseCard"
+        role="dialog"
+        aria-modal="true"
+        aria-live="polite"
+        tabindex="-1"
+      ></div>
+    </div>
+    <div class="calendar">
+      <h1><span>Betriebsratskalender 2025</span></h1>
+      <div class="controls">
+        <button id="openAll" type="button">
+          Alle T&#252;rchen &#246;ffnen
+        </button>
+      </div>
+      <div class="doors" id="doors"></div>
+    </div>
+    <script>
+      const doorSurprises = [
+        {
+          items: [
+            {
+              type: "text",
+              value:
+                "Heute ist ein guter Tag f\u00fcr ein warmes Getr\u00e4nk mit einem lieben Menschen.",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1470123808288-1e59739f4aa4?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value:
+                "Starte ruhig in den Tag und lass weihnachtliche Kl\u00e4nge laufen.",
+            },
+            {
+              type: "link",
+              text: "Weihnachtsklassiker-Playlist",
+              href: "https://www.youtube.com/playlist?list=PL8F6B0753B2CCA128",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Ruf jemanden an, den du lange nicht geh\u00f6rt hast.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Tauche in den Duft frisch gebackener Lebkuchen ein.",
+            },
+            {
+              type: "link",
+              text: "Lebkuchen-Rezept",
+              href: "https://www.chefkoch.de/rezepte/1460141259673074/Lebkuchen.html",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Schreibe auf, wof\u00fcr du heute dankbar bist.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "G\u00f6nne dir ein paar stille Minuten zum Atmen.",
+            },
+            {
+              type: "link",
+              text: "Kurze Winter-Meditation",
+              href: "https://www.youtube.com/watch?v=inpok4MKVLM",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Plane einen gem\u00fctlichen Filmabend im Kerzenlicht.",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value:
+                "Hol dir Weihnachtsstimmung vom Rathausplatz ins Wohnzimmer.",
+            },
+            {
+              type: "link",
+              text: "Virtuelle Weihnachtsm\u00e4rkte in Wien",
+              href: "https://www.wien.info/de/orte/wiener-weihnachtsmaerkte",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Verschenke heute ein aufrichtiges Kompliment.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value:
+                "Back doch mal etwas Neues f\u00fcr den Keksteller der Kollegen.",
+            },
+            {
+              type: "link",
+              text: "Weihnachtskeks-Ideen",
+              href: "https://www.ichkoche.at/thema/weihnachtskekse",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "G\u00f6nn dir eine fr\u00fche Schlafenszeit und genie\u00dfe die Ruhe.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Atme tief ein und aus, ganz bewusst und ohne Eile.",
+            },
+            {
+              type: "link",
+              text: "Achtsame Atem\u00fcbung",
+              href: "https://www.youtube.com/watch?v=QeY8SLITdMM",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Hinterlasse jemandem eine kleine Dankesnachricht.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value:
+                "Gestalte liebevolle Karten f\u00fcr Familie, Freunde und Kolleginnen.",
+            },
+            {
+              type: "link",
+              text: "Kostenlose Weihnachtskarten gestalten",
+              href: "https://www.canva.com/de_de/grusskarten/weihnachten/",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Backe oder plane dein Lieblingsrezept f\u00fcr heute Abend.",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Bewegung tut gut \u2013 auch wenn es nur ein kurzer Flow ist.",
+            },
+            {
+              type: "link",
+              text: "Winterliches 10-Minuten-Workout",
+              href: "https://www.youtube.com/watch?v=UBMk30rjy0o",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Lies ein Kapitel eines Buches bei Kerzenlicht.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Hol dir Inspiration f\u00fcr Geschichten und Rituale.",
+            },
+            {
+              type: "link",
+              text: "Geschichten rund um Weihnachten",
+              href: "https://www.geo.de/geolino/weihnachten",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Singe dein Lieblings-Weihnachtslied laut und frei.",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1511367465985-6c87a0deb360?auto=format&fit=crop&w=900&q=80",
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Bastle Schneeflocken f\u00fcr dein Fenster oder B\u00fcro.",
+            },
+            {
+              type: "link",
+              text: "Papier-Schneeflocken basteln",
+              href: "https://www.instructables.com/How-To-Make-Paper-Snowflakes/",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Plane eine kleine gute Tat f\u00fcr jemanden aus deinem Umfeld.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Verw\u00f6hne dein Team mit veganen Keks-Ideen.",
+            },
+            {
+              type: "link",
+              text: "Vegane Weihnachtskeks-Ideen",
+              href: "https://www.vegpool.de/magazin/vegane-weihnachtskekse.html",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Atme tief durch und genie\u00dfe drei Minuten bewusste Stille.",
+            },
+          ],
+        },
+        {
+          items: [
+            {
+              type: "text",
+              value: "Verfolge spielerisch, wo der Weihnachtsmann gerade ist.",
+            },
+            {
+              type: "link",
+              text: "NORAD Santa Tracker",
+              href: "https://www.noradsanta.org/",
+            },
+          ],
+          image:
+            "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80",
+        },
+      ];
+
+      const STORAGE_KEY = "brkalendar-open-doors";
+      const doorsContainer = document.getElementById("doors");
+      const openAllButton = document.getElementById("openAll");
+      const overlay = document.getElementById("surpriseOverlay");
+      const overlayCard = document.getElementById("surpriseCard");
+      const doorElements = [];
+      const totalDoors = doorSurprises.length;
+      let activeDoor = null;
+      let overlayClosingTimeout = null;
+      let snowBurstTimeout = null;
+
+      const readPersistedDoors = () => {
+        try {
+          const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+          return Array.isArray(stored)
+            ? new Set(stored.map((value) => String(value)))
+            : new Set();
+        } catch (error) {
+          console.warn("Konnte gespeicherte T\u00fcrchen nicht laden.", error);
+          return new Set();
+        }
+      };
+
+      const openedDoors = readPersistedDoors();
+
+      const persistOpenedDoors = () => {
+        try {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify(Array.from(openedDoors))
+          );
+        } catch (error) {
+          console.warn("Konnte den Status der T\u00fcrchen nicht speichern.", error);
+        }
+      };
+
+      const setDoorState = (door, shouldOpen, options = {}) => {
+        const { skipStorage = false } = options;
+        const isOpen = door.classList.contains("open");
+        if (isOpen === shouldOpen) return;
+        door.classList.toggle("open", shouldOpen);
+        door.setAttribute("aria-pressed", shouldOpen ? "true" : "false");
+        if (!skipStorage) {
+          const id = door.dataset.day;
+          if (shouldOpen) {
+            openedDoors.add(id);
+          } else {
+            openedDoors.delete(id);
+          }
+          persistOpenedDoors();
+        }
+      };
+
+      const getPrimaryText = (entry) => {
+        const textItem = entry.items.find((item) => item.type === "text");
+        if (textItem) {
+          return textItem.value;
+        }
+        const linkItem = entry.items.find((item) => item.type === "link");
+        return linkItem ? linkItem.text : "Festliche \u00dcberraschung";
+      };
+
+      const createDoorPreview = (entry) => {
+        const preview = document.createElement("div");
+        preview.className = "door-content";
+        preview.textContent = getPrimaryText(entry).slice(0, 58);
+        if (entry.image) {
+          preview.style.setProperty(
+            "--door-content-image",
+            `url("${entry.image}")`
+          );
+        }
+        return preview;
+      };
+
+      const renderOverlayContent = (entry, label) => {
+        overlayCard.innerHTML = "";
+        if (entry.image) {
+          const media = document.createElement("div");
+          media.className = "surprise-card__media";
+          media.style.backgroundImage = `url("${entry.image}")`;
+          overlayCard.appendChild(media);
+        }
+        const heading = document.createElement("strong");
+        heading.textContent = label;
+        overlayCard.appendChild(heading);
+        entry.items.forEach((item) => {
+          if (item.type === "text") {
+            const paragraph = document.createElement("p");
+            paragraph.textContent = item.value;
+            overlayCard.appendChild(paragraph);
+          } else if (item.type === "link") {
+            const link = document.createElement("a");
+            link.href = item.href;
+            link.textContent = item.text;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            overlayCard.appendChild(link);
+          }
+        });
+      };
+
+      const setOverlayOrigin = (door) => {
+        const rect = door.getBoundingClientRect();
+        const originX = rect.left + rect.width / 2;
+        const originY = rect.top + rect.height / 2;
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        overlay.style.setProperty("--overlay-start-x", `${originX}px`);
+        overlay.style.setProperty("--overlay-start-y", `${originY}px`);
+        overlay.style.setProperty(
+          "--overlay-translate-x",
+          `${originX - centerX}px`
+        );
+        overlay.style.setProperty(
+          "--overlay-translate-y",
+          `${originY - centerY}px`
+        );
+      };
+
+      const finalizeOverlayHide = (shouldCloseDoor) => {
+        overlay.classList.remove("is-visible", "is-closing");
+        overlay.setAttribute("aria-hidden", "true");
+        overlayCard.innerHTML = "";
+        if (
+          shouldCloseDoor &&
+          activeDoor &&
+          activeDoor.classList.contains("open")
+        ) {
+          setDoorState(activeDoor, false);
+        }
+        activeDoor = null;
+        overlayClosingTimeout = null;
+      };
+
+      const showOverlay = (entry, door, label) => {
+        activeDoor = door;
+        renderOverlayContent(entry, label);
+        setOverlayOrigin(door);
+        if (overlayClosingTimeout) {
+          clearTimeout(overlayClosingTimeout);
+          overlayClosingTimeout = null;
+        }
+        overlay.classList.remove("is-closing");
+        overlay.setAttribute("aria-hidden", "false");
+        requestAnimationFrame(() => {
+          overlay.classList.add("is-visible");
+          overlayCard.focus();
+        });
+      };
+
+      const triggerSnowBurst = () => {
+        document.body.classList.add("snow-burst");
+        window.clearTimeout(snowBurstTimeout);
+        snowBurstTimeout = window.setTimeout(() => {
+          document.body.classList.remove("snow-burst");
+        }, 1500);
+      };
+
+      const hideOverlay = (shouldCloseDoor = false) => {
+        if (
+          !overlay.classList.contains("is-visible") ||
+          overlay.classList.contains("is-closing")
+        ) {
+          if (
+            shouldCloseDoor &&
+            activeDoor &&
+            activeDoor.classList.contains("open")
+          ) {
+            setDoorState(activeDoor, false);
+          }
+          activeDoor = shouldCloseDoor ? null : activeDoor;
+          return;
+        }
+
+        if (activeDoor) {
+          setOverlayOrigin(activeDoor);
+        }
+
+        overlay.classList.add("is-closing");
+
+        const handleTransitionEnd = (event) => {
+          if (event.target !== overlayCard) return;
+          overlayCard.removeEventListener("transitionend", handleTransitionEnd);
+          finalizeOverlayHide(shouldCloseDoor);
+        };
+
+        overlayCard.addEventListener("transitionend", handleTransitionEnd);
+        overlayClosingTimeout = window.setTimeout(() => {
+          overlayCard.removeEventListener("transitionend", handleTransitionEnd);
+          finalizeOverlayHide(shouldCloseDoor);
+        }, 400);
+      };
+
+      const toggleDoor = (door, surprise, label) => {
+        const shouldOpen = !door.classList.contains("open");
+        if (shouldOpen) {
+          setDoorState(door, true);
+          triggerSnowBurst();
+          showOverlay(surprise, door, label);
+        } else if (activeDoor === door && overlay.classList.contains("is-visible")) {
+          hideOverlay(true);
+        } else {
+          setDoorState(door, false);
+        }
+      };
+
+      const placeDoorsRandomly = () => {
+        if (!doorElements.length || overlay.classList.contains("is-visible")) {
+          return;
+        }
+
+        const containerWidth = doorsContainer.clientWidth;
+        const containerHeight = doorsContainer.clientHeight;
+
+        if (!containerWidth || !containerHeight) {
+          return;
+        }
+
+        const padding = 18;
+        const spacing = 12;
+        const placedRects = [];
+
+        const fitsWithin = (value) => Math.max(value, 0);
+
+        doorElements.forEach((door, index) => {
+          const width = door.offsetWidth;
+          const height = door.offsetHeight;
+          const maxLeft = fitsWithin(containerWidth - width - padding * 2);
+          const maxTop = fitsWithin(containerHeight - height - padding * 2);
+          let attempts = 0;
+          let placed = false;
+
+          while (attempts < 400 && !placed) {
+            const left =
+              padding + Math.random() * (maxLeft > 0 ? maxLeft : 1);
+            const top = padding + Math.random() * (maxTop > 0 ? maxTop : 1);
+            const rect = {
+              left,
+              top,
+              right: left + width,
+              bottom: top + height,
+            };
+
+            const overlaps = placedRects.some((existing) => {
+              return !(
+                rect.right + spacing <= existing.left ||
+                rect.left >= existing.right + spacing ||
+                rect.bottom + spacing <= existing.top ||
+                rect.top >= existing.bottom + spacing
+              );
+            });
+
+            if (!overlaps) {
+              placedRects.push(rect);
+              door.style.left = `${rect.left}px`;
+              door.style.top = `${rect.top}px`;
+              placed = true;
+            }
+
+            attempts += 1;
+          }
+
+          if (!placed) {
+            const fallbackLeft =
+              padding + (index % 6) * (width + spacing * 2);
+            const fallbackTop =
+              padding + Math.floor(index / 6) * (height + spacing * 2);
+            const clampedLeft = Math.min(
+              fallbackLeft,
+              containerWidth - width - padding
+            );
+            const clampedTop = Math.min(
+              fallbackTop,
+              containerHeight - height - padding
+            );
+            placedRects.push({
+              left: clampedLeft,
+              top: clampedTop,
+              right: clampedLeft + width,
+              bottom: clampedTop + height,
+            });
+            door.style.left = `${clampedLeft}px`;
+            door.style.top = `${clampedTop}px`;
+          }
+        });
+      };
+
+      for (let day = 1; day <= totalDoors; day++) {
+        const door = document.createElement("div");
+        door.className = "door";
+        door.dataset.day = String(day);
+        door.setAttribute("role", "button");
+        door.setAttribute("aria-label", `T\u00fcrchen ${day}`);
+        door.setAttribute("aria-pressed", "false");
+        door.tabIndex = 0;
+        const formattedDay = String(day).padStart(2, "0");
+        const label = `T\u00fcrchen ${formattedDay}`;
+        door.innerHTML = `
+          <span class="door-number">${formattedDay}</span>
+          <span class="door-gift">&#9733;</span>
+        `;
+
+        const surprise =
+          doorSurprises[(day - 1) % doorSurprises.length] || doorSurprises[0];
+        const preview = createDoorPreview(surprise);
+        if (surprise.image) {
+          door.classList.add("has-image");
+          door.style.setProperty("--door-photo", `url("${surprise.image}")`);
+        }
+        door.appendChild(preview);
+
+        door.addEventListener("click", () => toggleDoor(door, surprise, label));
+
+        door.addEventListener("keydown", (event) => {
+          if (event.target !== door) return;
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleDoor(door, surprise, label);
+          }
+        });
+
+        doorsContainer.appendChild(door);
+        doorElements.push(door);
+
+        if (openedDoors.has(String(day))) {
+          setDoorState(door, true, { skipStorage: true });
+        }
+      }
+
+      requestAnimationFrame(() => placeDoorsRandomly());
+
+      let resizeTimeoutId = null;
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeoutId);
+        resizeTimeoutId = window.setTimeout(() => {
+          placeDoorsRandomly();
+        }, 200);
+      });
+
+      overlay.addEventListener("click", () => hideOverlay());
+      overlayCard.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+          event.stopPropagation();
+          return;
+        }
+        event.stopPropagation();
+        hideOverlay();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          hideOverlay();
+        }
+      });
+
+      openAllButton.addEventListener("click", () => {
+        hideOverlay(false);
+        doorElements.forEach((door) => setDoorState(door, true));
+        triggerSnowBurst();
+      });
+    </script>
+  </body>
+</html>
