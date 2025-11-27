@@ -1,14 +1,14 @@
 {
   "doors": [
+{
+  "items": [
     {
-      "items": [
-        {
-          "type": "text",
-          "value": "Heute ist ein guter Tag für ein warmes Getränk mit einem lieben Menschen."
-        }
-      ],
-      "image": "https://images.unsplash.com/photo-1470123808288-1e59739f4aa4?auto=format&fit=crop&w=900&q=80"
-    },
+      "type": "text",
+      "value": "Nicht vergessen: Damit der 31. Dezember 2025 als dienstfreier Arbeitstag gilt, muss die erforderliche Urlaubs- bzw. Zeitausgleichswoche bis spätestens 15. Dezember 2025 beantragt und genehmigt sein."
+    }
+  ],
+  "image": "https://unsplash.com/de/fotos/ein-grosses-feuerwerk-mit-einer-burg-im-hintergrund-1YOYbiW1NN0"
+},
     {
       "items": [
         {
