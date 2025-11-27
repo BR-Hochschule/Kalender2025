@@ -1,0 +1,849 @@
+:root {
+  --color-bg-overlay: rgba(0, 0, 0, 0.25);
+  --color-accent-strong: #ad1457;
+  --color-text-light: #ffffff;
+  --color-text-dark: #7a1f1f;
+  --door-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+  --border-radius-xl: 16px;
+  --transition-fast: 0.25s ease;
+  --christmas-green: #0f7a3b;
+  --christmas-gold: #ffd87a;
+
+  /* Basisgröße der Türchen – wird über Media Queries angepasst */
+  --door-size: clamp(70px, 7vw, 110px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Kein Scrollen, voller Viewport */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Tahoma, Geneva, Verdana, sans-serif;
+  background: url("../img/background.jpg") center/cover no-repeat fixed;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: clamp(0.3rem, 1.5vw, 1.2rem);
+  position: relative;
+  overflow-x: hidden;
+  color: var(--color-text-light);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg-overlay);
+  z-index: 0;
+}
+
+/* Fallback falls backdrop-filter nicht unterstützt wird */
+@supports not (backdrop-filter: blur(6px)) {
+  body::before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.calendar {
+  width: 100%;
+  max-width: 1100px;
+  height: 100vh; /* Füllt den Viewport */
+  background: rgba(255, 255, 255, 0);
+  border-radius: var(--border-radius-xl);
+  padding: clamp(1rem, 3vw, 2.4rem);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(6px);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Überschrift – weihnachtlich & gut sichtbar */
+
+.calendar-title {
+  margin: 0 0 1.6rem;
+  text-align: center;
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  padding-inline: 0.4rem;
+}
+
+.calendar-title-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.45rem 2.1rem;
+  border-radius: 999px;
+  position: relative;
+  background: radial-gradient(
+      circle at 0% 0%,
+      rgba(255, 255, 255, 0.22),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(0, 0, 0, 0.35),
+      transparent 55%
+    );
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 18px 35px rgba(0, 0, 0, 0.5),
+    0 0 18px rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  isolation: isolate;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.calendar-title-inner::before,
+.calendar-title-inner::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  background: linear-gradient(
+      120deg,
+      #fff9e5,
+      #ffd89c,
+      #ff9b6a,
+      #f04e55,
+      #a00232
+    )
+    border-box;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.calendar-title-inner::after {
+  filter: blur(4px);
+  opacity: 0.6;
+}
+
+.calendar-title-text {
+  font-family: "Playfair Display", "Segoe Script", Georgia, serif;
+  font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+  letter-spacing: 0.18rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  white-space: normal;
+
+  /* Sichtbarer, weihnachtlicher Verlauf */
+  background-image: linear-gradient(
+    115deg,
+    #fff7d9 0%,      /* helles Gold */
+    #ffd56a 15%,     /* kräftiges Gold */
+    #ff9d4d 30%,     /* warmes Orange-Rot */
+    #e63946 50%,     /* Weihnachtsrot */
+    #9b1d20 65%,     /* Tiefrot */
+    #0e7a39 100%     /* Tannengrün */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Kontur + Glow für gute Sichtbarkeit */
+  -webkit-text-stroke: 1.2px rgba(0, 0, 0, 0.75);
+  text-shadow:
+    0 0 6px rgba(0, 0, 0, 0.55),
+    0 0 14px rgba(255, 225, 150, 0.7),
+    0 0 22px rgba(255, 150, 60, 0.6);
+
+  background-size: 250% 250%;
+  animation: christmasGlow 7s ease-in-out infinite alternate;
+}
+
+@keyframes christmasGlow {
+  0% {
+    background-position: 0% 50%;
+    text-shadow:
+      0 0 4px rgba(0, 0, 0, 0.55),
+      0 0 10px rgba(255, 230, 160, 0.6),
+      0 0 18px rgba(255, 180, 80, 0.6);
+  }
+  50% {
+    background-position: 50% 50%;
+    text-shadow:
+      0 0 8px rgba(0, 0, 0, 0.6),
+      0 0 18px rgba(255, 250, 200, 0.9),
+      0 0 28px rgba(255, 170, 70, 0.9);
+  }
+  100% {
+    background-position: 100% 50%;
+    text-shadow:
+      0 0 5px rgba(0, 0, 0, 0.55),
+      0 0 12px rgba(255, 230, 160, 0.7),
+      0 0 20px rgba(255, 200, 90, 0.7);
+  }
+}
+
+.calendar-title-icon {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+}
+
+.calendar-title-sub {
+  font-size: 0.9rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.calendar-title-sub::before,
+.calendar-title-sub::after {
+  content: "";
+  flex: 1 1 40px;
+  max-width: 80px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.8) 40%,
+    transparent 100%
+  );
+}
+
+.calendar-title-sub::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--christmas-green) 40%,
+    rgba(255, 255, 255, 0.8) 80%,
+    transparent 100%
+  );
+}
+
+.calendar-title-sub::after {
+  background: linear-gradient(
+    270deg,
+    transparent 0%,
+    var(--christmas-gold) 40%,
+    rgba(255, 255, 255, 0.8) 80%,
+    transparent 100%
+  );
+}
+
+.calendar-title::before,
+.calendar-title::after {
+  content: "✶ ❄ ✶ ❄ ✶";
+  font-size: 0.9rem;
+  letter-spacing: 0.35rem;
+  color: rgba(255, 255, 255, 0.85);
+  opacity: 0.9;
+}
+
+.calendar-title::before {
+  order: -1;
+  margin-bottom: 0.15rem;
+}
+
+.calendar-title::after {
+  margin-top: 0.1rem;
+}
+
+/* DOORS: responsives Grid, ohne Scrollen */
+
+.doors {
+  flex: 1;
+  margin-top: 1.8rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  padding: clamp(0.6rem, 1.5vw, 1.4rem);
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(var(--door-size), 1fr)
+  );
+  justify-content: center;
+  align-content: center;
+  gap: clamp(0.4rem, 1.4vw, 1.1rem);
+  overflow: hidden; /* kein Scrollen innerhalb der Doors */
+}
+
+.doors > noscript {
+  grid-column: 1 / -1;
+  display: block;
+  padding: 2rem;
+  color: var(--color-text-dark);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+}
+
+/* Türchen – Größe über Variable, quadratisch */
+
+.door {
+  background: rgba(5, 5, 5, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+  color: var(--color-text-light);
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 100%;
+  max-width: var(--door-size);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+  position: relative;
+  backdrop-filter: blur(5px);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  box-shadow: var(--door-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+  padding: 0;
+  border-width: 1px;
+  margin: 2px;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: var(--door-photo, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.door.open.has-image::before {
+  opacity: 0.9;
+}
+
+/* Fokus-Styling */
+
+.door:focus {
+  outline: none;
+}
+
+.door:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.door::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 9px;
+  border: 1px dashed rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+.door:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.door.open {
+  transform: rotateY(-8deg) scale(1.02);
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--color-text-dark);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.35);
+  border-color: rgba(173, 20, 87, 0.9);
+}
+
+.door.open::after {
+  border-color: rgba(173, 20, 87, 0.6);
+}
+
+.door > * {
+  position: relative;
+  z-index: 3;
+}
+
+.door-number {
+  font-size: 1.7rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.door-gift {
+  position: absolute;
+  bottom: 9px;
+  font-size: 1rem;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.door.open .door-gift {
+  opacity: 0.4;
+  transform: translateY(0);
+}
+
+.door.open .door-number {
+  opacity: 0.2;
+  transform: translateY(-10px);
+}
+
+/* Türchen-Vorschau-Content */
+
+.door-content {
+  position: absolute;
+  inset: 12px;
+  border-radius: 10px;
+  padding: 0.6rem;
+  background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.92)
+    ),
+    var(--door-content-image, none);
+  color: var(--color-text-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  line-height: 1.2;
+  pointer-events: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  word-break: break-word;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.door.open .door-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Vor-Zeit gesperrte Türchen */
+
+.door-locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.door-locked:hover {
+  transform: none;
+  box-shadow: var(--door-shadow);
+}
+
+/* Vorhang-Effekt */
+
+.door-curtain {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+  filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.4));
+}
+
+.door-curtain-panel {
+  flex: 1;
+  background: linear-gradient(
+      90deg,
+      rgba(117, 7, 36, 0.98),
+      rgba(190, 21, 58, 0.94)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 231, 197, 0.25) 0,
+      rgba(255, 231, 197, 0.25) 3px,
+      transparent 3px,
+      transparent 7px
+    );
+  margin: 0 1px;
+  box-shadow:
+    inset 0 -35px 55px rgba(0, 0, 0, 0.55),
+    inset 0 20px 25px rgba(255, 175, 175, 0.25);
+  transform-origin: top center;
+  transition: transform 0.65s ease, opacity 0.55s ease;
+  position: relative;
+}
+
+.door-curtain-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.25) 5px,
+    transparent 5px,
+    transparent 12px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.4;
+}
+
+.door-curtain-panel.left {
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.door-curtain-panel.right {
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.door.open .door-curtain-panel.left {
+  transform: perspective(750px) rotateY(30deg) translateX(-105%);
+}
+
+.door.open .door-curtain-panel.right {
+  transform: perspective(750px) rotateY(-30deg) translateX(105%);
+}
+
+/* Overlay / Dialog */
+
+.surprise-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 15;
+  cursor: pointer;
+  --overlay-start-x: 50%;
+  --overlay-start-y: 50%;
+  --overlay-translate-x: 0;
+  --overlay-translate-y: 0;
+}
+
+.surprise-overlay.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.surprise-overlay.is-closing {
+  pointer-events: none;
+}
+
+.surprise-card {
+  max-width: min(520px, 90vw);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--color-text-dark);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  position: relative;
+  transform-origin: var(--overlay-start-x) var(--overlay-start-y);
+  transform: translate(
+      var(--overlay-translate-x),
+      var(--overlay-translate-y)
+    )
+    scale(0.25);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.surprise-overlay.is-visible .surprise-card {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+}
+
+.surprise-overlay.is-closing .surprise-card {
+  transform: translate(
+      var(--overlay-translate-x),
+      var(--overlay-translate-y)
+    )
+    scale(0.2);
+  opacity: 0;
+}
+
+.surprise-card::after {
+  content: "Tippe, um zu schließen";
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.75rem;
+  letter-spacing: 0.08rem;
+  color: rgba(122, 31, 31, 0.6);
+}
+
+.surprise-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--color-accent-strong);
+}
+
+.surprise-card p {
+  margin: 0;
+}
+
+.surprise-card a {
+  color: var(--color-accent-strong);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.surprise-card__media {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 -40px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.surprise-card__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+/* Schneeflocken */
+
+.snowflake {
+  position: fixed;
+  top: -120px;
+  left: 0;
+  font-size: 1rem;
+  color: #ffffff;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  white-space: pre;
+  opacity: 0.9;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.snowflake.resting {
+  top: auto;
+  bottom: -5px;
+  animation: none;
+  opacity: 0.85;
+  transform: rotate(8deg) scale(0.75);
+}
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(100px, 110vh, 0) rotate(360deg);
+    opacity: 0.95;
+  }
+}
+
+/* =======================================
+   Responsive-Anpassungen
+   ======================================= */
+
+/* Tablets / kleinere Laptops */
+@media (max-width: 900px) {
+  body {
+    padding: 0.5rem;
+    background-attachment: scroll;
+  }
+
+  .calendar {
+    padding: 0.9rem 0.8rem 1rem;
+  }
+
+  .calendar-title-inner {
+    padding-inline: 1.5rem;
+  }
+
+  .calendar-title-text {
+    font-size: clamp(1.7rem, 4.4vw, 2.6rem);
+  }
+
+  :root {
+    --door-size: clamp(60px, 8.5vw, 95px);
+  }
+}
+
+/* Smartphones im Hochformat */
+@media (max-width: 600px) {
+  body {
+    padding: 0.4rem;
+  }
+
+  .calendar {
+    padding: 0.6rem 0.5rem 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .calendar-title {
+    margin-bottom: 0.8rem;
+  }
+
+  .calendar-title-inner {
+    padding-inline: 1.1rem;
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+  }
+
+  .calendar-title-text {
+    letter-spacing: 0.12rem;
+    font-size: clamp(1.4rem, 5.3vw, 2.1rem);
+    -webkit-text-stroke-width: 1px;
+  }
+
+  .calendar-title-sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .calendar-title-sub::before,
+  .calendar-title-sub::after {
+    max-width: 60px;
+  }
+
+  .doors {
+    margin-top: 1.1rem;
+    padding: 0.5rem 0.4rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  :root {
+    --door-size: clamp(46px, 11vw, 80px);
+  }
+
+  .door {
+    font-size: 1.1rem;
+  }
+
+  .door-number {
+    font-size: 1.35rem;
+  }
+
+  .door-content {
+    font-size: 0.78rem;
+    padding: 0.45rem;
+  }
+
+  .door-gift {
+    font-size: 0.8rem;
+    bottom: 5px;
+  }
+
+  .surprise-card {
+    max-width: 100vw;
+    padding: 1.5rem 1.1rem 2.1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 14px;
+  }
+
+  .surprise-card__media {
+    height: 150px;
+    border-radius: 12px;
+  }
+
+  .surprise-card::after {
+    font-size: 0.7rem;
+    right: 12px;
+    bottom: 8px;
+  }
+}
+
+/* Sehr kleine Geräte (extra schmal) */
+@media (max-width: 380px) {
+  body {
+    padding: 0.3rem;
+  }
+
+  .calendar {
+    padding-inline: 0.3rem;
+    border-radius: 0;
+  }
+
+  .calendar-title-inner {
+    padding-inline: 0.8rem;
+  }
+
+  .calendar-title-text {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    letter-spacing: 0.08rem;
+  }
+
+  .calendar-title-sub {
+    font-size: 0.74rem;
+  }
+
+  .doors {
+    gap: 0.5rem;
+  }
+
+  :root {
+    --door-size: clamp(40px, 12vw, 70px);
+  }
+
+  .door-number {
+    font-size: 1.2rem;
+  }
+
+  .surprise-card {
+    padding: 1.25rem 0.9rem 1.8rem;
+  }
+}
