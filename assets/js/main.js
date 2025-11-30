@@ -15,6 +15,10 @@ const isMobile =
   window.matchMedia &&
   window.matchMedia("(max-width: 600px)").matches;
 
+// Heutiges Datum – nur Türchen bis inkl. heutigem Tag dürfen neu geöffnet werden
+const today = new Date();
+const currentDayOfMonth = today.getDate(); // 1–31
+
 // -----------------------------
 // Persistenz für geöffnete Türchen
 // -----------------------------
@@ -278,11 +282,21 @@ const hideOverlay = (shouldCloseDoor = false) => {
 };
 
 const toggleDoor = (door, surprise, label) => {
+  const dayNumber = Number(door.dataset.day);
+  const isAlreadyOpen = openedDoors.has(String(dayNumber));
   const shouldOpen = !door.classList.contains("open");
+
+  // Regel: Türchen dürfen nur bis inkl. heutigem Tag neu geöffnet werden.
+  // Bereits geöffnete Türchen bleiben natürlich weiter zugänglich.
+  if (shouldOpen && !isAlreadyOpen && dayNumber > currentDayOfMonth) {
+    // visuelles Feedback bei "zu früh"
+    door.classList.add("shake");
+    setTimeout(() => door.classList.remove("shake"), 450);
+    return;
+  }
 
   if (shouldOpen) {
     setDoorState(door, true);
-    // Mehr Schnee beim Öffnen
     spawnSnowBurst(260);
     showOverlay(surprise, door, label);
   } else if (
@@ -335,9 +349,7 @@ const initCalendar = (doorSurprises) => {
       <span class="door-gift">&#9733;</span>
     `;
 
-    // Inhalt: direkt aus dem passenden Index (day-1)
     const surprise = doorSurprises[day - 1] || doorSurprises[0];
-
     const preview = createDoorPreview(surprise);
 
     if (surprise.image) {
@@ -358,6 +370,12 @@ const initCalendar = (doorSurprises) => {
     `;
     door.appendChild(curtain);
 
+    // Lock-State für zukünftige Tage, solange sie noch nicht geöffnet wurden
+    if (!openedDoors.has(String(day)) && day > currentDayOfMonth) {
+      door.classList.add("door-locked");
+      door.setAttribute("aria-disabled", "true");
+    }
+
     door.addEventListener("click", () =>
       toggleDoor(door, surprise, label)
     );
@@ -367,6 +385,8 @@ const initCalendar = (doorSurprises) => {
     // Öffnungsstatus wiederherstellen – unabhängig von der Position
     if (openedDoors.has(String(day))) {
       setDoorState(door, true, { skipStorage: true });
+      door.classList.remove("door-locked");
+      door.removeAttribute("aria-disabled");
     }
   }
 
