@@ -1,24 +1,38 @@
 {
   "doors": [
-{
-  "items": [
-    {
-      "type": "text",
-      "value": "Nicht vergessen: Damit der 31. Dezember 2025 als dienstfreier Arbeitstag gilt, muss die erforderliche Urlaubs- bzw. Zeitausgleichswoche bis spätestens 15. Dezember 2025 beantragt und genehmigt sein."
-    }
-  ],
-  "image": "https://images.unsplash.com/photo-1477738224882-4eba549a81ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-},
     {
       "items": [
         {
           "type": "text",
-          "value": "Weihnachtsklassiker"
+          "value": "Herzlich Willkommen beim heurigen Betriebsrats-Adventkalender! Neben der Seite im Intranet haben wir auch eine eigene Sway-Seite, auf der aktuelle Informationen und Aktionen gesammelt zur Verfügung stehen."
         },
         {
           "type": "link",
-          "text": "Weihnachtsklassiker-Playlist",
-          "href": "https://www.youtube.com/playlist?list=PL8F6B0753B2CCA128"
+          "text": "Betriebsrats-Sway mit aktuellen Infos",
+          "href": "https://sway.cloud.microsoft/GuYVwNYTAgY4SbWu?ref=Link&loc=play"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1606482512676-255bf02be7cf?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "Nicht vergessen: Damit der 31. Dezember 2025 als dienstfreier Arbeitstag gilt, muss die erforderliche Urlaubs- bzw. Zeitausgleichswoche bis spätestens 15. Dezember 2025 beantragt und genehmigt sein."
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1477738224882-4eba549a81ea?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "Corporate Benefits – Plattform mit Angeboten für die Belegschaft der Hochschule Campus Wien. Registrierung per HCW-Mailadresse oder privater Mailadresse und Registrierungscode: Betriebsrat_#924."
+        },
+        {
+          "type": "link",
+          "text": "Corporate Benefits für die HCW",
+          "href": "https://hcw.mitarbeiterangebote.at"
         }
       ],
       "image": "https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
@@ -27,20 +41,7 @@
       "items": [
         {
           "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        },
-        {
-          "type": "link",
-          "text": "Link",
-          "href": "https://www.hcw.ac.at"
+          "value": "Auch wenn es mal wieder stressig sein sollte und die Arbeit immer mehr wird: Denk an regelmäßige Pausen und vor allem an eine wahrheitsgemäße Zeiterfassung. Alle geleisteten Stunden bitte unbedingt im BMD dokumentieren."
         }
       ],
       "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80"
@@ -49,162 +50,150 @@
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Jede Mitgliedschaft bei der Gewerkschaft stärkt unsere Position bei der Umsetzung eines Kollektivvertrags für HAWs/FHs."
+        },
+        {
+          "type": "link",
+          "text": "Mitglied werden | GPA",
+          "href": "#"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Für das Angebot eines Jobrads ist ein Kollektivvertrag Voraussetzung. Jede Unterstützung auf dem Weg dorthin zählt!"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Einkaufen bei Metro: Mit der CampusCard bei Metro einkaufen – zusätzlich gibt es -15 % bis zum 27.12.2025."
+        },
+        {
+          "type": "link",
+          "text": "Details zur Metro-Rabattaktion im Intranet",
+          "href": "https://intranet.hcw.ac.at/2025/11/metro-neue-rabattaktion-15-2/"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "2 freie Tage bei Umzug? Dies und andere Sonderurlaubstage sind in der Betriebsvereinbarung Dienstverhinderungen geregelt."
+        },
+        {
+          "type": "link",
+          "text": "BV Dienstverhinderungen (PDF)",
+          "href": "https://intranet.hcw.ac.at/wp-content/uploads/2022/06/BV_Dienstverhinderung_01082022.pdf"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "In der Husten-Schnupfen-Zeit ist man vielleicht froh über Prozente auf Hustensaft & Co: Die Apotheke Kaiserkrone bietet 20 % Rabatt auf alle Produkte und jeden Mittwoch einen Lieferservice zum Empfang des HCW-Stammhauses."
+        },
+        {
+          "type": "link",
+          "text": "Intranetbeitrag zur Apotheke Kaiserkrone (folgt)",
+          "href": "#"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1470123808288-1e59739f4aa4?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
+    },
+    {
+      "items": []
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Papa-Eltern-Baby-Zeit: Bei Geburt des eigenen Kindes bzw. bei Annahme eines Pflegekindes kann innerhalb der ersten 3 Lebensmonate des Kindes 4 Wochen (bei Vollzeit) Sonderurlaub bei vollem Gehalt beantragt werden."
+        },
+        {
+          "type": "link",
+          "text": "BV Papa-Eltern-Baby-Zeit (PDF)",
+          "href": "https://intranet.fh-campuswien.ac.at/wp-content/uploads/2023/04/BV-Papa-Eltern-Baby-Zeit-2023-05-01-Unterschriften.pdf"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Urlaubs- und Weihnachtsgeld sind nicht selbstverständlich – dafür gibt es keine gesetzliche Vorgabe. Die Gewerkschaften haben es über Jahrzehnte geschafft, durch Verankerung in den KVs das 13. und 14. Gehalt zu etablieren. An der HCW ist dies in den einzelnen Dienstverträgen geregelt."
+        },
+        {
+          "type": "link",
+          "text": "Stärke unsere Hochschule und werde GPA-Mitglied! Mitglied werden | GPA",
+          "href": "#"
         }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": []
+    },
+    {
+      "items": []
     },
     {
       "items": [
         {
           "type": "text",
-          "value": "text"
+          "value": "Wir wünschen frohe Weihnachten, erholsame Feiertage und viel Gesundheit! Danke für euren Einsatz und eure Unterstützung im vergangenen Jahr."
         }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "text"
-        }
-      ]
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     }
   ]
 }
-
