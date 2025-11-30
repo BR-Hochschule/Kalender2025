@@ -467,6 +467,21 @@ body::before {
   box-shadow: var(--door-shadow);
 }
 
+/* kleines Feedback bei zu frühem Klick */
+
+.door.shake {
+  animation: shake 0.4s ease;
+  border-color: #ff3b3b !important;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+
 /* Vorhang-Effekt */
 
 .door-curtain {
