@@ -103,7 +103,18 @@
       "image": "https://cdn.metro-online.com/-/media/Project/MCW/AT_Metro/Ohne_Zuordnung/METRO_Logo_1M_1500px.jpg?rev=94cfa9eb579049ac99452d15dac19dcc&hash=2F02204A1F34D6898CC68B46FD133151"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "Die BV Gleitzeit für Lehrende regelt die Lehre am Samstag, die Zeit am Samstag wird in der Zeiterfassung wie üblich erfasst, zusätzlich werden die Lehreinheiten eingetragen. Für 24 LEs (bei Vollzeit) am Samstag, gibt es einen extra Urlaubstag. Für Sekretariate in berufbegleitenden Studengängen ist eine analoge Regelung in Erarbeitung. Sonstige angordnete Arbeiten am Samstag sind Mehrstunden, die mit 1:1,5 in Zeit abgeolten werden. Angeordnete Arbeiten am Sonntag zählen 1:2 und werden ausbezahlt."
+        },
+        {
+          "type": "link",
+          "text": "Zur BV",
+          "href": "https://intranet.hcw.ac.at/wp-content/uploads/2025/04/BV-Gleitzeit-FHCW-Verein-EG-1-3-Lehrpersonal-2025-02.pdf"
+        }
+      ],
+      "image": "https://cdn.metro-online.com/-/media/Project/MCW/AT_Metro/Ohne_Zuordnung/METRO_Logo_1M_1500px.jpg?rev=94cfa9eb579049ac99452d15dac19dcc&hash=2F02204A1F34D6898CC68B46FD133151"
     },
     {
       "items": [
@@ -134,13 +145,18 @@
       "image": "https://images.unsplash.com/photo-1470123808288-1e59739f4aa4?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
-    },
-    {
-      "items": []
-    },
-    {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
@@ -157,10 +173,60 @@
       "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
@@ -177,10 +243,32 @@
       "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
@@ -197,10 +285,32 @@
       "image": "https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "text",
+          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+        },
+        {
+          "type": "link",
+          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
+          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+        }
+      ],
+      "image": "https://images.unsplash.com/photo-1454023989775-79520f04322c?auto=format&fit=crop&w=900&q=80"
     },
     {
       "items": [
@@ -213,6 +323,7 @@
     }
   ]
 }
+
 
 
 
