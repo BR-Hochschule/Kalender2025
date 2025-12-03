@@ -68,7 +68,7 @@
         },
         {
           "type": "link",
-          "text": "Arbeiterkammer"
+          "text": "Arbeiterkammer",
           "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Arbeitszeit/Normalarbeitszeit/Dienstverhinderung.html"
         }
       ],
@@ -82,7 +82,7 @@
         },
         {
           "type": "link",
-          "text": "Betriebsrats-Sway"
+          "text": "Betriebsrats-Sway",
           "href": "https://sway.cloud.microsoft/GuYVwNYTAgY4SbWu?ref=Link&loc=play"
         }
       ],
@@ -213,6 +213,7 @@
     }
   ]
 }
+
 
 
 
