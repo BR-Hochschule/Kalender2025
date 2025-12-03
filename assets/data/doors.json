@@ -63,14 +63,23 @@
     {
       "items": [
         {
-          "type": "text",
-          "value": "Für das Angebot eines Jobrads ist ein Kollektivvertrag Voraussetzung. Jede Unterstützung auf dem Weg dorthin zählt!"
+          "type": "link",
+          "text": "Dienstverhinderung? Schneechaos, Vorladung bei Gericht? Arbeitnehmer*innen behalten den Anspruch auf Entgelt, wenn sie durch wichtige, ihre Person betreffende Gründe ohne ihr Verschulden für ver­hält­nis­mäßig kurze Zeit verhindert sind, ihre Arbeit zu leisten. Wichtig ist, dass der Arbeitgeber so rasch wie möglich informiert wird. Genauere Informationen gibt es bei der Arbeiterkammer: "
+          "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Arbeitszeit/Normalarbeitszeit/Dienstverhinderung.html"
         }
       ],
       "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
     },
     {
-      "items": []
+      "items": [
+        {
+          "type": "link",
+          "text": "Sag's dem Betriebsrat: Auf unserer Sway-Seite gibt es ein Formular, mit dem einfach und anonym Informationen an den Betriebsrat übermittelt werden können."
+          "href": "https://sway.cloud.microsoft/GuYVwNYTAgY4SbWu?ref=Link&loc=play"
+        }
+      ],
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/sway.png"
+    },
     },
     {
       "items": [
