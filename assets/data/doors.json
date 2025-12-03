@@ -114,7 +114,7 @@
           "href": "https://intranet.hcw.ac.at/wp-content/uploads/2025/04/BV-Gleitzeit-FHCW-Verein-EG-1-3-Lehrpersonal-2025-02.pdf"
         }
       ],
-      "image": "https://cdn.metro-online.com/-/media/Project/MCW/AT_Metro/Ohne_Zuordnung/METRO_Logo_1M_1500px.jpg?rev=94cfa9eb579049ac99452d15dac19dcc&hash=2F02204A1F34D6898CC68B46FD133151"
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/9.png"
     },
     {
       "items": [
@@ -128,7 +128,7 @@
           "href": "https://intranet.hcw.ac.at/wp-content/uploads/2022/06/BV_Dienstverhinderung_01082022.pdf"
         }
       ],
-      "image": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=900&q=80"
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/10.png"
     },
     {
       "items": [
@@ -142,7 +142,7 @@
           "href": "#"
         }
       ],
-      "image": "https://images.unsplash.com/photo-1470123808288-1e59739f4aa4?auto=format&fit=crop&w=900&q=80"
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/11.png"
     },
     {
       "items": [
@@ -323,6 +323,7 @@
     }
   ]
 }
+
 
 
 
