@@ -63,8 +63,12 @@
     {
       "items": [
         {
+          "type": "text",
+          "value": "Dienstverhinderung? Schneechaos, Vorladung bei Gericht? Arbeitnehmer*innen behalten den Anspruch auf Entgelt, wenn sie durch wichtige, ihre Person betreffende Gründe ohne ihr Verschulden für ver­hält­nis­mäßig kurze Zeit verhindert sind, ihre Arbeit zu leisten. Wichtig ist, dass der Arbeitgeber so rasch wie möglich informiert wird. Genauere Informationen gibt es bei der"
+        },
+        {
           "type": "link",
-          "text": "Dienstverhinderung? Schneechaos, Vorladung bei Gericht? Arbeitnehmer*innen behalten den Anspruch auf Entgelt, wenn sie durch wichtige, ihre Person betreffende Gründe ohne ihr Verschulden für ver­hält­nis­mäßig kurze Zeit verhindert sind, ihre Arbeit zu leisten. Wichtig ist, dass der Arbeitgeber so rasch wie möglich informiert wird. Genauere Informationen gibt es bei der Arbeiterkammer: "
+          "text": "Arbeiterkammer"
           "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Arbeitszeit/Normalarbeitszeit/Dienstverhinderung.html"
         }
       ],
@@ -73,13 +77,16 @@
     {
       "items": [
         {
+          "type": "text",
+          "value": "Sag's dem Betriebsrat: Auf unserer Sway-Seite gibt es ein Formular, mit dem einfach und anonym Informationen an den Betriebsrat übermittelt werden können."
+        },
+        {
           "type": "link",
-          "text": "Sag's dem Betriebsrat: Auf unserer Sway-Seite gibt es ein Formular, mit dem einfach und anonym Informationen an den Betriebsrat übermittelt werden können."
+          "text": "Betriebsrats-Sway"
           "href": "https://sway.cloud.microsoft/GuYVwNYTAgY4SbWu?ref=Link&loc=play"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/sway.png"
-    },
     },
     {
       "items": [
@@ -206,5 +213,6 @@
     }
   ]
 }
+
 
 
