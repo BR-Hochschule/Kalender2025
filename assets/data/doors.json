@@ -64,11 +64,11 @@
       "items": [
         {
           "type": "text",
-          "value": "Dienstverhinderung? Schneechaos, Vorladung bei Gericht? Arbeitnehmer*innen behalten den Anspruch auf Entgelt, wenn sie durch wichtige, ihre Person betreffende Gründe ohne ihr Verschulden für ver­hält­nis­mäßig kurze Zeit verhindert sind, ihre Arbeit zu leisten. Wichtig ist, dass der Arbeitgeber so rasch wie möglich informiert wird. Genauere Informationen gibt es bei der"
+          "value": "Dienstverhinderung? Schneechaos, Vorladung bei Gericht? Arbeitnehmer*innen behalten den Anspruch auf Entgelt, wenn sie durch wichtige, ihre Person betreffende Gründe ohne ihr Verschulden für verhältnismäßig kurze Zeit verhindert sind, ihre Arbeit zu leisten. Wichtig ist, dass der Arbeitgeber so rasch wie möglich informiert wird. Genauere Informationen gibt es bei der Arbeiterkammer."
         },
         {
           "type": "link",
-          "text": "Arbeiterkammer",
+          "text": "Arbeiterkammer: Dienstverhinderung",
           "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Arbeitszeit/Normalarbeitszeit/Dienstverhinderung.html"
         }
       ],
@@ -106,7 +106,7 @@
       "items": [
         {
           "type": "text",
-          "value": "Die BV Gleitzeit für Lehrende regelt die Lehre am Samstag, die Zeit am Samstag wird in der Zeiterfassung wie üblich erfasst, zusätzlich werden die Lehreinheiten eingetragen. Für 24 LEs (bei Vollzeit) am Samstag, gibt es einen extra Urlaubstag. Für Sekretariate in berufbegleitenden Studengängen ist eine analoge Regelung in Erarbeitung. Sonstige angordnete Arbeiten am Samstag sind Mehrstunden, die mit 1:1,5 in Zeit abgeolten werden. Angeordnete Arbeiten am Sonntag zählen 1:2 und werden ausbezahlt."
+          "value": "Die BV Gleitzeit für Lehrende regelt die Lehre am Samstag, die Zeit am Samstag wird in der Zeiterfassung wie üblich erfasst, zusätzlich werden die Lehreinheiten eingetragen. Für 24 LEs (bei Vollzeit) am Samstag gibt es einen extra Urlaubstag. Für Sekretariate in berufsbegleitenden Studiengängen ist eine analoge Regelung in Erarbeitung. Sonstige angeordnete Arbeiten am Samstag sind Mehrstunden, die mit 1:1,5 in Zeit abgegolten werden. Angeordnete Arbeiten am Sonntag zählen 1:2 und werden ausbezahlt."
         },
         {
           "type": "link",
@@ -152,22 +152,23 @@
         },
         {
           "type": "link",
-          "text": "Interne-Konfliktberaterinnen",
+          "text": "Interne Konfliktberater*innen",
           "href": "https://intranet.hcw.ac.at/organisationseinheiten/personalmanagement/gesundheitsmanagement-campus-vital/interne-konfliktberaterinnen/"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/12.png"
     },
+
     {
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+          "value": "Pflegefreistellung: Für die Pflege erkrankter naher Angehöriger (auch wenn sie nicht im selben Haushalt leben) gibt es bis zu einer Woche Pflegefreistellung pro Arbeitsjahr. Dies gilt auch für im selben Haushalt lebende Personen, die nicht als nahe Angehörige eingestuft werden. Für Kinder unter 12 Jahren gibt es bei erneutem Pflegebedarf eine weitere Woche pro Arbeitsjahr. Die Pflegefreistellung kann bei Bedarf tage- oder stundenweise in Anspruch genommen werden."
         },
         {
           "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "text": "Dokument zur Pflegefreistellung",
+          "href": "https://portal.hcw.ac.at/webservices/portaltoenabler/enablergetdocument.aspx?id=1761"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/13.png"
@@ -176,12 +177,12 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+          "value": "6. Urlaubswoche: Gesetzlich stehen allen Arbeitnehmer*innen 25 Urlaubstage pro Jahr zu (bei 5 Arbeitstagen pro Woche). Nach 25 Dienstjahren (von denen bis zu 12 Jahre angerechnet werden können) erhöht sich der Urlaubsanspruch auf 6 Wochen. Ein Kollektivvertrag könnte eine schnellere Erreichung der 6. Urlaubswoche regeln."
         },
         {
           "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "text": "Arbeiterkammer: Mehr Urlaub für Langgediente",
+          "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Urlaub/So_viel_Urlaub_bekommen_Sie.html#heading_Mehr_Urlaub_fuer_Langgediente"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/14.png"
@@ -190,7 +191,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+          "value": "In vielen Kollektivverträgen sind der 24. und 31.12. dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt und genehmigt sein, damit der 31.12. frei ist."
         },
         {
           "type": "link",
@@ -204,12 +205,12 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+          "value": "6. Urlaubswoche: Gesetzlich stehen allen Arbeitnehmer*innen 25 Urlaubstage pro Jahr zu. Nach 25 Dienstjahren (von denen bis zu 12 Jahre angerechnet werden können) erhöht sich der Urlaubsanspruch auf 6 Wochen."
         },
         {
           "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "text": "Arbeiterkammer: Mehr Urlaub für Langgediente",
+          "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Urlaub/So_viel_Urlaub_bekommen_Sie.html#heading_Mehr_Urlaub_fuer_Langgediente"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/16.png"
@@ -218,12 +219,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
-        },
-        {
-          "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "value": "Türchen 17: Inhalt folgt."
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/17.png"
@@ -246,12 +242,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
-        },
-        {
-          "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "value": "Türchen 19: Inhalt folgt."
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/19.png"
@@ -260,12 +251,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
-        },
-        {
-          "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "value": "Türchen 20: Inhalt folgt."
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/20.png"
@@ -274,12 +260,12 @@
       "items": [
         {
           "type": "text",
-          "value": "Urlaubs- und Weihnachtsgeld sind nicht selbstverständlich – dafür gibt es keine gesetzliche Vorgabe. Die Gewerkschaften haben es über Jahrzehnte geschafft, durch Verankerung in den KVs das 13. und 14. Gehalt zu etablieren. An der HCW ist dies in den einzelnen Dienstverträgen geregelt."
+          "value": "Urlaubs- und Weihnachtsgeld sind nicht selbstverständlich – dafür gibt es keine gesetzliche Vorgabe. Die Gewerkschaften haben es über Jahrzehnte geschafft, durch Verankerung in den Kollektivverträgen das 13. und 14. Gehalt zu etablieren. An der HCW ist dies in den einzelnen Dienstverträgen geregelt."
         },
         {
           "type": "link",
-          "text": "Stärke unsere Hochschule und werde GPA-Mitglied! Mitglied werden | GPA",
-          "href": "#"
+          "text": "Stärke unsere Hochschule und werde GPA-Mitglied!",
+          "href": "https://www.gpa.at/mitglied-werden"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/21.png"
@@ -288,12 +274,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
-        },
-        {
-          "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "value": "Türchen 22: Inhalt folgt."
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/22.png"
@@ -302,12 +283,7 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
-        },
-        {
-          "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "value": "Türchen 23: Inhalt folgt."
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/23.png"
@@ -323,13 +299,3 @@
     }
   ]
 }
-
-
-
-
-
-
-
-
-
-
