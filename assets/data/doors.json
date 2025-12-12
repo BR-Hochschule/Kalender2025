@@ -148,12 +148,12 @@
       "items": [
         {
           "type": "text",
-          "value": "In vielen Kollektivverträgen sind der 24. und 31. Dezember dienstfrei, ohne an Bedingungen geknüpft zu sein. Reminder: Bis heute muss der notwendige Urlaub bzw. Zeitausgleich beantragt sein, damit der 31.12. frei ist."
+          "value": "Gibt es Konflikte im Team? Wir haben ausgebildete interne Konfliktberater*innen an der HCW, die niederschwellig helfen können und vermittelnd zur Seite stehen."
         },
         {
           "type": "link",
-          "text": "Neue Regelung zu dienstfreien Arbeitstagen am 24. und 31. Dezember",
-          "href": "https://intranet.hcw.ac.at/2025/10/neue-regelung-zu-dienstfreien-arbeitstagen-am-24-und-31-dezember/"
+          "text": "Interne-Konfliktberaterinnen",
+          "href": "https://intranet.hcw.ac.at/organisationseinheiten/personalmanagement/gesundheitsmanagement-campus-vital/interne-konfliktberaterinnen/"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/12.png"
@@ -323,6 +323,7 @@
     }
   ]
 }
+
 
 
 
