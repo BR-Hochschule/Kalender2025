@@ -138,8 +138,8 @@
         },
         {
           "type": "link",
-          "text": "Intranetbeitrag zur Apotheke Kaiserkrone (folgt)",
-          "href": "#"
+          "text": "Intranetbeitrag zur Apotheke Kaiserkrone",
+          "href": "https://intranet.hcw.ac.at/2025/12/neues-angebot-20-rabatt-auf-apothekenprodukte-und-lieferung-an-die-hcw/"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/11.png"
@@ -299,3 +299,4 @@
     }
   ]
 }
+
