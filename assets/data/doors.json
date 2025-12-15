@@ -205,12 +205,12 @@
       "items": [
         {
           "type": "text",
-          "value": "6. Urlaubswoche: Gesetzlich stehen allen Arbeitnehmer*innen 25 Urlaubstage pro Jahr zu. Nach 25 Dienstjahren (von denen bis zu 12 Jahre angerechnet werden können) erhöht sich der Urlaubsanspruch auf 6 Wochen."
+          "value": "Krankenstand ist der Personalabteilung unverzüglich zu melden. Eine ärztliche Bestätigung ist erst ab dem 3. Krankenstandstag zu übermitteln."
         },
         {
           "type": "link",
-          "text": "Arbeiterkammer: Mehr Urlaub für Langgediente",
-          "href": "https://www.arbeiterkammer.at/beratung/arbeitundrecht/Urlaub/So_viel_Urlaub_bekommen_Sie.html#heading_Mehr_Urlaub_fuer_Langgediente"
+          "text": "Genaueres findet ihr im Informationsblatt Abwesenheiten",
+          "href": "https://portal.hcw.ac.at/webservices/portaltoenabler/enablergetdocument.aspx?id=1761"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/16.png"
@@ -219,7 +219,12 @@
       "items": [
         {
           "type": "text",
-          "value": "Türchen 17: Inhalt folgt."
+          "value": "Für Arbeiten am Bildschirm steht dir eine Bildschirmbrille zu, sofern diese vom Augenarzt verschrieben wird. Vor Kauf muss mit der Personalabteilung Kontakt aufgenommen werden."
+        },
+        {
+          "type": "link",
+          "text": "Weitere Infos und Vorgehen.",
+          "href": "https://portal.hcw.ac.at/webservices/portaltoenabler/enablergetdocument.aspx?id=2361"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/17.png"
@@ -242,7 +247,12 @@
       "items": [
         {
           "type": "text",
-          "value": "Türchen 19: Inhalt folgt."
+          "value": "Kündigungen durch die Dienstgeberin werden an unserer Fachhochschule laut Dienstvertrag zum Monatsende wirksam, die Kündigungsfristen betragen nach Ausspruch der Kündigung je nach Dauer der Beschäftigung zwischen 6 Wochen und 5 Monaten."
+        },
+        {
+          "type": "link",
+          "text": "Kündigungsfristen",
+          "href": "https://www.gpa.at/themen/arbeitsrecht/arbeitsrechts-abc/arbeitsrecht-abc-g-k/kuendigungsfristen"
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/19.png"
@@ -251,7 +261,7 @@
       "items": [
         {
           "type": "text",
-          "value": "Türchen 20: Inhalt folgt."
+          "value": "Für Kündigungen durch Dienstnehmer*innen gelten an unserer Hochschule laut Dienstvertrag dieselben Fristen, wie bei der Kündigung durch die Dienstgeberin.  Das sind 6 Wochen bis 5 Monate. "
         }
       ],
       "image": "https://br-hochschule.github.io/Kalender2025/assets/img/20.png"
@@ -260,7 +270,25 @@
       "items": [
         {
           "type": "text",
-          "value": "Urlaubs- und Weihnachtsgeld sind nicht selbstverständlich – dafür gibt es keine gesetzliche Vorgabe. Die Gewerkschaften haben es über Jahrzehnte geschafft, durch Verankerung in den Kollektivverträgen das 13. und 14. Gehalt zu etablieren. An der HCW ist dies in den einzelnen Dienstverträgen geregelt."
+          "value": "Das Dienstverhältnis kann auch einvernehmlich aufgelöst werden. Eine einvernehmliche Auflösung eines Arbeitsverhältnisses kann dazu führen, dass Ansprüche wie Postensuchtage oder Kündigungsfrist entfallen. Daher ist Vorsicht geboten und sollte sicherheitshalber vor Unterschrift Kontakt mit dem Betriebsrat, der Arbeiterkammer oder der Gewerkschaft gesucht werden."
+        }
+      ],
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/21.png"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "Am 19. Jänner 2026 findet um 12:30 Uhr unsere Betriebsversammlung im Audimax F.E.01 statt, bei der es unter anderem um die Gehaltsverhandlungen gehen wird. Kommt vorbei und beteiligt euch!"
+        }
+      ],
+      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/22.png"
+    },
+    {
+      "items": [
+        {
+          "type": "text",
+          "value": "Urlaubs- und Weihnachtsgeld sind nicht selbtsverständlich, dafür gibt es keine gesetzliche Vorgabe. Die Gewerkschaften haben es über Jahrzehnte geschafft durch Verankerung in den KVs das 13. und 14. Gehalt zu etablierten. An der HCW ist dies in den einzelen Dienstverträge geregelt."
         },
         {
           "type": "link",
@@ -274,24 +302,6 @@
       "items": [
         {
           "type": "text",
-          "value": "Türchen 22: Inhalt folgt."
-        }
-      ],
-      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/22.png"
-    },
-    {
-      "items": [
-        {
-          "type": "text",
-          "value": "Türchen 23: Inhalt folgt."
-        }
-      ],
-      "image": "https://br-hochschule.github.io/Kalender2025/assets/img/23.png"
-    },
-    {
-      "items": [
-        {
-          "type": "text",
           "value": "Wir wünschen frohe Weihnachten, erholsame Feiertage und viel Gesundheit! Danke für euren Einsatz und eure Unterstützung im vergangenen Jahr."
         }
       ],
@@ -299,5 +309,6 @@
     }
   ]
 }
+
 
 
